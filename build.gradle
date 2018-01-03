@@ -4,6 +4,7 @@ version '0.0.1'
 apply plugin: 'java'
 
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -15,12 +16,11 @@ ext {
 }
 
 dependencies {
-    /*compile("io.vertx:vertx-core:${vertxVersion}")*/
     compile("io.vertx:vertx-core:${vertxVersion}")
     compile("io.vertx:vertx-web:${vertxVersion}")
 
     compile group: 'io.vertx', name: 'vertx-dependencies', version: '3.5.0', ext: 'pom'
 
-
+    testCompile("io.vertx:vertx-unit:${vertxVersion}")
     testCompile("org.testng:testng:${testngVersion}")
 }

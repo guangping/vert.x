@@ -42,7 +42,9 @@ public class RestServer extends AbstractVerticle {
     private void handlePost(RoutingContext context) {
         String param1 = context.request().getParam("param1");
 
+        System.out.println(param1);
 
-        context.response().end();
+
+        context.response().end("success ! "+Thread.currentThread().getName());
     }
 }

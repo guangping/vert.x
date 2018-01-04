@@ -15,7 +15,7 @@ public class MainVert {
         HttpServer server = vertx.createHttpServer();
 
         server.requestHandler(
-                req -> req.response().end("Hello World!")
+                req -> req.response().end("Hello World! "+Thread.currentThread().getName())
         );
 
         server.listen(8080);
